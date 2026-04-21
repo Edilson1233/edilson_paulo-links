@@ -206,45 +206,6 @@
     setTimeout(typewriterTick, 800); // inicia após a animação de entrada
  
  
-    /* ════════════════════════════════════════════════
-       D) CONTADOR DE VISITAS
-       Usa localStorage para persistir o contador
-       entre sessões no mesmo browser.
-       Exibe o número com uma animação de contagem.
-       ════════════════════════════════════════════════ */
-    const visitNumEl = document.getElementById('visit-num');
-    const STORAGE_KEY = 'tv_visit_count';
- 
-    /* Lê o valor atual (ou 0 se nunca visitou) e incrementa */
-    const rawCount  = parseInt(localStorage.getItem(STORAGE_KEY) || '0', 10);
-    const newCount  = rawCount + 1;
-    localStorage.setItem(STORAGE_KEY, String(newCount));
- 
-    /*
-     * Animação de contagem: parte de max(0, newCount-50)
-     * e incrementa até newCount ao longo de ~1 segundo.
-     * Dá a sensação de um "odômetro" a girar.
-     */
-    const animateCount = (target) => {
-      const start    = Math.max(0, target - 50);
-      const duration = 1000; // ms
-      const startTime = performance.now();
- 
-      const step = (now) => {
-        const elapsed  = now - startTime;
-        const progress = Math.min(elapsed / duration, 1);
-        // Easing out-quart para desacelerar no final
-        const eased    = 1 - Math.pow(1 - progress, 4);
-        const current  = Math.round(start + (target - start) * eased);
-        visitNumEl.textContent = current.toLocaleString('pt-PT');
-        if (progress < 1) requestAnimationFrame(step);
-      };
- 
-      requestAnimationFrame(step);
-    };
- 
-    animateCount(newCount);
- 
  
     /* ════════════════════════════════════════════════
        E) COPIAR LINK — Clipboard API
