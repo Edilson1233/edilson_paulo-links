@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Edílson Paulo — Full-Stack Dev & Trader | TechVerse Digital" />
+  <meta property="og:title"       content="Edílson Paulo · TechVerse Digital" />
+  <meta property="og:description" content="Transformando ideias em soluções digitais" />
+  <meta name="theme-color"        content="#04030D" />
+  <title>Edílson Paulo · TechVerse Digital</title>
+ 
+  <!-- ══════════════════════════════════════════════════
+       FONTES: Orbitron (brand/display) + Outfit (corpo)
+       ══════════════════════════════════════════════════ -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet" />
+ 
+  <!-- Font Awesome 6 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" crossorigin="anonymous" />
+    
+    <link rel="stylesheet" href="style.css">
+    <script defer src="script.js"></script>
+</head>
+<body>
+ <!-- Cursor personalizado (apenas desktop) -->
+  <div id="cursor"    aria-hidden="true"></div>
+  <div id="cursor-dot" aria-hidden="true"></div>
+ 
+  <!-- Canvas de partículas – preenchido pelo JS -->
+  <canvas id="bg-canvas" aria-hidden="true"></canvas>
+ 
+  <!-- Sobreposições de textura -->
+  <div id="grid-overlay" aria-hidden="true"></div>
+  <div id="scan-overlay"  aria-hidden="true"></div>
+ 
+  <!-- ══════════════════════════════════════════════════
+       CONTEÚDO PRINCIPAL
+       ══════════════════════════════════════════════════ -->
+  <div class="page-wrap">
+    <main class="profile-card" role="main" aria-label="Perfil de Edílson Paulo">
+ 
+      <!-- Badge TechVerse Digital -->
+      <div class="brand-badge" aria-label="TechVerse Digital — Online">
+        <div class="brand-badge__hex" aria-hidden="true">
+          <i class="fa-solid fa-bolt"></i>
+        </div>
+        <span class="brand-badge__text">TechVerse Digital</span>
+        <span class="brand-badge__dot" aria-hidden="true"></span>
+      </div>
+ 
+      <!-- Avatar -->
+      <div class="avatar-wrap">
+        <div class="avatar-glow"  aria-hidden="true"></div>
+        <div class="avatar-ring"  aria-hidden="true"></div>
+        <!--
+          INSTRUÇÃO: Substitua o src pela URL da sua foto.
+          Exemplo: src="./edilson.jpg"
+        -->
+        <img
+          class="avatar"
+          src="https://placehold.co/112x112/0a0820/7C3AED?text=EP&font=montserrat"
+          alt="Foto de perfil de Edílson Paulo"
+          width="112" height="112"
+          loading="eager"
+        />
+      </div>
+ 
+      <!-- Nome -->
+      <h1 class="profile-name">Edílson Paulo</h1>
+ 
+      <!-- Título (preenchido pelo efeito typewriter via JS) -->
+      <p class="profile-title" id="typewriter-target" aria-live="polite">
+        <!-- JS insere o texto aqui -->
+      </p>
+ 
+      <!-- Bio -->
+      <p class="profile-bio">
+        Transformando ideias em soluções digitais<br />
+        <strong>TechVerse Digital</strong>
+      </p>
+ 
+      <!-- Status "disponível" -->
+      <div class="status-badge" aria-label="Disponível para projetos">
+        <i class="fa-solid fa-circle" aria-hidden="true"></i>
+        Disponível para projectos
+      </div>
+ 
+      <!-- ─── Barra de estatísticas ─────────────────── -->
+      <div class="stats-bar" role="region" aria-label="Estatísticas e partilha">
+ 
+        <!-- Contador de visitas -->
+        <div class="visit-counter">
+          <i class="fa-regular fa-eye visit-counter__icon" aria-hidden="true"></i>
+          <div>
+            <div class="visit-counter__num" id="visit-num" aria-label="Contador de visitas">
+              <!-- JS insere o número aqui -->
+            </div>
+            <div class="visit-counter__label">visitas</div>
+          </div>
+        </div>
+ 
+        <!-- Botão copiar link -->
+        <button
+          class="copy-btn"
+          id="copy-btn"
+          aria-label="Copiar link desta página"
+          type="button"
+        >
+          <i class="fa-regular fa-copy" id="copy-icon" aria-hidden="true"></i>
+          <span id="copy-label">Copiar Link</span>
+        </button>
+      </div>
+ 
+      <!-- Divisor -->
+      <div class="divider" aria-hidden="true"></div>
+ 
+      <!-- ─── Lista de Links ─────────────────────────── -->
+      <ul class="links-list" aria-label="Links de Edílson Paulo">
+ 
+        <!-- 1. Exness -->
+        <li>
+          <a
+            href="https://one.exnessonelink.com/a/9r27xq4nd5"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="link-btn link-btn--exness"
+            aria-label="Criar conta Exness — abre em nova aba"
+          >
+            <span class="link-btn__icon" aria-hidden="true">
+              <i class="fa-solid fa-chart-line"></i>
+            </span>
+            <span class="link-btn__text">
+              Crie uma conta Exness aqui!
+              <span class="link-btn__sub">Plataforma de trading global</span>
+            </span>
+            <i class="fa-solid fa-arrow-up-right link-btn__arrow" aria-hidden="true"></i>
+          </a>
+        </li>
+ 
+        <!-- 2. GitHub -->
+        <li>
+          <a
+            href="https://github.com/Edilson1233"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="link-btn link-btn--github"
+            aria-label="Perfil do GitHub — abre em nova aba"
+          >
+            <span class="link-btn__icon" aria-hidden="true">
+              <i class="fa-brands fa-github"></i>
+            </span>
+            <span class="link-btn__text">
+              GitHub
+              <span class="link-btn__sub">Repositórios e projectos open-source</span>
+            </span>
+            <i class="fa-solid fa-arrow-up-right link-btn__arrow" aria-hidden="true"></i>
+          </a>
+        </li>
+ 
+        <!-- 3. LinkedIn -->
+        <li>
+          <a
+            href="https://www.linkedin.com/in/edilson-paulo-chivinge-b5714b28b/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="link-btn link-btn--linkedin"
+            aria-label="Perfil do LinkedIn — abre em nova aba"
+          >
+            <span class="link-btn__icon" aria-hidden="true">
+              <i class="fa-brands fa-linkedin-in"></i>
+            </span>
+            <span class="link-btn__text">
+              LinkedIn
+              <span class="link-btn__sub">Rede profissional e oportunidades</span>
+            </span>
+            <i class="fa-solid fa-arrow-up-right link-btn__arrow" aria-hidden="true"></i>
+          </a>
+        </li>
+ 
+        <!-- 4. WhatsApp -->
+        <li>
+          <a
+            href="https://wa.me/877467893?text=Olá%20Edílson%2C%20gostaria%20de%20saber%20mais%20sobre%20seus%20serviços!"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="link-btn link-btn--whatsapp"
+            aria-label="Falar via WhatsApp — abre em nova aba"
+          >
+            <span class="link-btn__icon" aria-hidden="true">
+              <i class="fa-brands fa-whatsapp"></i>
+            </span>
+            <span class="link-btn__text">
+              Fale Comigo
+              <span class="link-btn__sub">Respondo rapidamente via WhatsApp</span>
+            </span>
+            <i class="fa-solid fa-arrow-up-right link-btn__arrow" aria-hidden="true"></i>
+          </a>
+        </li>
+ 
+      </ul><!-- /links-list -->
+ 
+    </main><!-- /profile-card -->
+ 
+    <!-- Rodapé -->
+    <footer class="footer">
+      <div class="footer-brand" aria-label="TechVerse Digital">
+        <i class="fa-solid fa-bolt" aria-hidden="true" style="font-size:.6rem"></i>
+        TechVerse Digital
+      </div>
+      <p class="footer-copy">© 2025 Edílson Paulo · Todos os direitos reservados</p>
+    </footer>
+ 
+  </div><!-- /page-wrap -->
+ 
+  <!-- Toast de notificação (copiar link) -->
+  <div id="toast" role="alert" aria-live="assertive">
+    <i class="fa-solid fa-check-circle" aria-hidden="true"></i>
+    Link copiado para a área de transferência!
+  </div>
+
+  <style>
+    @keyframes rippleAnim {
+      to { transform: scale(3); opacity: 0; }
+    }
+  </style>
+</body>
+</html>
