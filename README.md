@@ -14,7 +14,7 @@
 │       Edílson Paulo         │
 │   Desenvolvedor Full-Stack  │
 │                             │
-│  👁 12 visitas  [Copiar 🔗] │
+│        [Copiar 🔗] │
 │  ─────────────────────────  │
 │  📈 Crie uma conta Exness   │
 │     GitHub                  │
